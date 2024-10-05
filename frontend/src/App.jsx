@@ -6,7 +6,7 @@ const App = () => {
   const [editid, seteditid] = useState(null);
 
   const getdata = async () => {
-    const response = await fetch("http://localhost:5000/");
+    const response = await fetch("https://sample-todo-with-be-db.onrender.com");
     const result = await response.json();
     if (result.status == 200) {
       setlists(result.data);
@@ -15,7 +15,7 @@ const App = () => {
   };
 
   const postdata = async () => {
-    const response = await fetch("http://localhost:5000/", {
+    const response = await fetch("https://sample-todo-with-be-db.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const App = () => {
   };
 
   const putdata = async (index) => {
-    const response = await fetch(`http://localhost:5000/?index=${index}`, {
+    const response = await fetch(`https://sample-todo-with-be-db.onrender.com?index=${index}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const App = () => {
   }
 
   const deletedata = async (index) => {
-    await fetch(`http://localhost:5000/${index}`, {
+    await fetch(`https://sample-todo-with-be-db.onrender.com${index}`, {
       method: "DELETE",
     });
     getdata()
