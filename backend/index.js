@@ -19,6 +19,7 @@ app.use(cors())
 app.use(express.json())
 
 
+// CRUD Operations
 
 app.get("/", async (req, res) => {
     const data = await todolists.find().toArray()
