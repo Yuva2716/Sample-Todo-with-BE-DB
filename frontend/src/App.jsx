@@ -42,6 +42,7 @@ const App = () => {
     });
     if (response.status == 200) {
       seteditid(null);
+      setipvalue("")
       getdata()
       
     }
